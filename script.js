@@ -12,9 +12,21 @@ function setClock() {
     let secs =  a.getSeconds() / 60;
     let mins =  (a.getMinutes() + secs) / 60;
     let hours = (a.getHours() + mins) / 12;
+    changeBackground(a.getHours());
     setRotation(secHand, secs);
     setRotation(minuteHand, mins);
     setRotation(hourHand, hours);
+}
+function changeBackground(time) {
+    //console.log(time)
+    if(time < 12 && time > 5)
+    document.body.className = "day"
+    else if(time > 12 && time < 16)
+    document.body.className = "afternoon"
+    else if(time > 16 && time < 8)
+    document.body.className = "eve"
+    else
+    document.body.className = "night"
 }
 
 function setRotation(elem, rotRatio) {

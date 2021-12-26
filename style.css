@@ -3,23 +3,42 @@
     font-family: 'Shizuru', cursive;
 }
 body {
-    background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
+    background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
     font-size: 1.5rem;
+    background-size: 100% 100%;
+}
+
+.day{
+    background-image: url("images/day.jpg");
+    height: 100%;
+}
+.afternoon{
+    background-image: url("images/Afternoon.jpg");
+    height: 100%;
+}
+.eve{
+    background-image: url("images/eve.jpg");
+    height: 100%;
+}
+.night{
+    background-image: url("images/night.jpg");
+    height: 100%;
 }
 
 .clock {
     width: 300px;
     height: 300px;
-    background-color: rgba(255, 255, 255, .8);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     border: 2px solid black;
     position: relative;
 }
+
 
 .clock .number{
     --rotation: 0;
@@ -64,7 +83,18 @@ body {
     --rotation: 330deg;
 }
 
-
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    z-index: 11;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+}
 
 .clock .hands {
     --rotation: 0;
