@@ -1,4 +1,3 @@
-
 const hourHand = document.querySelector('[data-hour-hand]');
 const minuteHand = document.querySelector('.min');
 const secHand = document.querySelector('.sec');
